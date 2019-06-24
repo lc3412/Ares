@@ -15,13 +15,14 @@ Ares is still under development, and contains a lot of bugs and TODO lists. Any 
 ### What is in this repo?
 
 - Evaluation data ([evaluation_data](evaluation_data))
-  - 19 real world projects compiled IR Results
+  - 19 real world projects
   - Ares evaluation result
   - APEx evaluation result
   - New bugs found by Ares
 - Tools([tools](tools))
   - build-capture
    - Ares tookit
+ - Empirical Study([empirical_study](empirical_study))
 
 
 
@@ -34,7 +35,7 @@ We select 19 widely used projects, i.e., [keepalived](https://github.com/acassen
 
 We also test these projects on  [APEx](https://github.com/yujokang/APEx), an automically error specification inference tool.
 
-We upload the compiled IR Results of 19 projects at [evaluation_IR_Results](evaluation_data).
+We upload the build capture Results of 19 projects at [Real-World-Projects](evaluation_data/Real-World-Projects).
 
 #### New Bugs
 
@@ -71,7 +72,6 @@ $gcc -E example.c -o exmaple.i
 $clang-3.9 -S -emit-llvm -g example.i
 ```
 
-We have provide part of build-capture result of 19 projects in evaluation_build_capture_Results folders.
 
 In theory, any projects supported by clang can be build-capture by our tool. However, clang is different from gcc. Therefore, we suggest to replace the $CC$ in Makefile by clang-3.9, such as
 
@@ -96,6 +96,6 @@ Unfortunately, build-capture tool is under the patient application process. Ther
 
 Ares can be used with the following steps: 
 
-  - make sure that target project can be compiled by clang-3.9, then using our build-capture tool to capture its build sequence automatically. The captured results are preprocessed by expanding the macros and in-lining header files which are shown in [evaluation_build_capture_Results](evaluation_data). Then using the captured results, we can generate the corresponding IR results which are shown in [evaluation_IR_Results](evaluation_data).
+  - make sure that target project can be compiled by clang-3.9, then using our build-capture tool to capture its build sequence automatically. The captured results are preprocessed by expanding the macros and in-lining header files. Then using the captured results, we can generate the corresponding IR results which are shown in [Real-World-Projects](evaluation_data/Real-World-Projects).
   - Trigger the major work of error specification mining. It first parses IR results into CFA and CG, then performs static analysis. Inferred specifications are written to the errspec.txt file shown in [tools](tools/engine/output/).
 
