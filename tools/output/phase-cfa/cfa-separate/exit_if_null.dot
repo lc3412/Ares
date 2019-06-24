@@ -1,0 +1,23 @@
+digraph exit_if_null {
+label="exit_if_null"
+23795 [label="N23795\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+23796 [label="N23796\n(rp:9, ep:9)\nentry", shape="doublecircle"]
+23796 -> 23798 [label="%2 = alloca i8*, align 8"]
+23798 [label="N23798\n(rp:8, ep:8)", shape="circle"]
+23798 -> 23800 [label="store i8* %0, i8** %2, align 8"]
+23800 [label="N23800\n(rp:7, ep:7)", shape="circle"]
+23800 -> 23801 [label="%3 = load i8*, i8** %2, align 8"]
+23801 [label="N23801\n(rp:6, ep:6)", shape="circle"]
+23801 -> 23802 [label="%4 = icmp eq i8* %3, null"]
+23802 [label="N23802\n(rp:5, ep:5)", shape="circle"]
+23802 -> 23807 [label="[%4 = icmp eq i8* %3, null]"]
+23802 -> 23808 [label="[!(%4 = icmp eq i8* %3, null)]"]
+23804 [label="N23804\n(rp:2, ep:2)", shape="circle"]
+23804 -> 23805 [label="call void @exit(i32 69)"]
+23805 [label="N23805\n(rp:1, ep:1)", shape="circle"]
+23805 -> 23795 [label="unreachable"]
+23807 [label="N23807\n(rp:3, ep:3)", shape="circle"]
+23807 -> 23804 [label="logger --@-- call void @logger(i32 6, i32 3, i8* getelementptr inbounds ([40 x i8], [40 x i8]* @.str.66, i32 0, i32 0))", style="dashed", color="blue"]
+23808 [label="N23808\n(rp:4, ep:4)", shape="circle"]
+23808 -> 23795 [label="ret void"]
+}

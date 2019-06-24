@@ -1,0 +1,19 @@
+digraph seamless_reset_state {
+label="seamless_reset_state"
+56885 [label="N56885\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+56886 [label="N56886\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+56886 -> 56888 [label="%1 = load i8*, i8** @seamless_rest, align 8"]
+56888 [label="N56888\n(rp:6, ep:6)", shape="circle"]
+56888 -> 56889 [label="%2 = icmp ne i8* %1, null"]
+56889 [label="N56889\n(rp:5, ep:5)", shape="circle"]
+56889 -> 56895 [label="[%2 = icmp ne i8* %1, null]"]
+56889 -> 56894 [label="[!(%2 = icmp ne i8* %1, null)]"]
+56891 [label="N56891\n(rp:3, ep:3)", shape="circle"]
+56891 -> 56892 [label="xfree --@-- call void @xfree(i8* %4)", style="dashed", color="blue"]
+56892 [label="N56892\n(rp:2, ep:2)", shape="circle"]
+56892 -> 56894 [label="store i8* null, i8** @seamless_rest, align 8"]
+56894 [label="N56894\n(rp:1, ep:1)", shape="circle"]
+56894 -> 56885 [label="ret void"]
+56895 [label="N56895\n(rp:4, ep:4)", shape="circle"]
+56895 -> 56891 [label="%4 = load i8*, i8** @seamless_rest, align 8"]
+}

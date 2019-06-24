@@ -1,0 +1,16 @@
+digraph lspci_init {
+label="lspci_init"
+29014 [label="N29014\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+29015 [label="N29015\n(rp:6, ep:6)\nentry", shape="doublecircle"]
+29015 -> 29017 [label="channel_register --@-- %1 = call %struct._VCHANNEL* @channel_register(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1200, i32 0, i32 0), i32 -1073741824, void (%struct.stream*)* @lspci_process)", style="dashed", color="blue"]
+29017 [label="N29017\n(rp:5, ep:5)", shape="circle"]
+29017 -> 29018 [label="store %struct._VCHANNEL* %1, %struct._VCHANNEL** @lspci_channel, align 8"]
+29018 [label="N29018\n(rp:4, ep:4)", shape="circle"]
+29018 -> 29019 [label="%2 = load %struct._VCHANNEL*, %struct._VCHANNEL** @lspci_channel, align 8"]
+29019 [label="N29019\n(rp:3, ep:3)", shape="circle"]
+29019 -> 29020 [label="%3 = icmp ne %struct._VCHANNEL* %2, null"]
+29020 [label="N29020\n(rp:2, ep:2)", shape="circle"]
+29020 -> 29021 [label="%4 = zext i1 %3 to i32"]
+29021 [label="N29021\n(rp:1, ep:1)", shape="circle"]
+29021 -> 29014 [label="ret i32 %4"]
+}

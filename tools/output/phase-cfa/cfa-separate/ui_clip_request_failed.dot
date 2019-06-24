@@ -1,0 +1,10 @@
+digraph ui_clip_request_failed {
+label="ui_clip_request_failed"
+71628 [label="N71628\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+71629 [label="N71629\n(rp:3, ep:3)\nentry", shape="doublecircle"]
+71629 -> 71631 [label="xclip_refuse_selection --@-- call void @xclip_refuse_selection(%struct.XSelectionRequestEvent* @selection_request)", style="dashed", color="blue"]
+71631 [label="N71631\n(rp:2, ep:2)", shape="circle"]
+71631 -> 71632 [label="store i32 0, i32* @has_selection_request, align 4"]
+71632 [label="N71632\n(rp:1, ep:1)", shape="circle"]
+71632 -> 71628 [label="ret void"]
+}

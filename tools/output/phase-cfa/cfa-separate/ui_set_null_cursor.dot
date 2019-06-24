@@ -1,0 +1,10 @@
+digraph ui_set_null_cursor {
+label="ui_set_null_cursor"
+80697 [label="N80697\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+80698 [label="N80698\n(rp:3, ep:3)\nentry", shape="doublecircle"]
+80698 -> 80700 [label="%1 = load i8*, i8** @g_null_cursor, align 8"]
+80700 [label="N80700\n(rp:2, ep:2)", shape="circle"]
+80700 -> 80701 [label="ui_set_cursor --@-- call void @ui_set_cursor(i8* %1)", style="dashed", color="blue"]
+80701 [label="N80701\n(rp:1, ep:1)", shape="circle"]
+80701 -> 80697 [label="ret void"]
+}

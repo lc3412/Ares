@@ -1,0 +1,12 @@
+digraph xclip_handle_SelectionClear {
+label="xclip_handle_SelectionClear"
+82070 [label="N82070\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+82071 [label="N82071\n(rp:4, ep:4)\nentry", shape="doublecircle"]
+82071 -> 82073 [label="logger --@-- call void @logger(i32 2, i32 0, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.5.1146, i32 0, i32 0))", style="dashed", color="blue"]
+82073 [label="N82073\n(rp:3, ep:3)", shape="circle"]
+82073 -> 82074 [label="xclip_notify_change --@-- call void @xclip_notify_change()", style="dashed", color="blue"]
+82074 [label="N82074\n(rp:2, ep:2)", shape="circle"]
+82074 -> 82075 [label="xclip_probe_selections --@-- call void @xclip_probe_selections()", style="dashed", color="blue"]
+82075 [label="N82075\n(rp:1, ep:1)", shape="circle"]
+82075 -> 82070 [label="ret void"]
+}

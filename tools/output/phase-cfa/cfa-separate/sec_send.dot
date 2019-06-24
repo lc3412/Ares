@@ -1,0 +1,20 @@
+digraph sec_send {
+label="sec_send"
+59893 [label="N59893\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+59894 [label="N59894\n(rp:8, ep:8)\nentry", shape="doublecircle"]
+59894 -> 59896 [label="%3 = alloca %struct.stream*, align 8"]
+59896 [label="N59896\n(rp:7, ep:7)", shape="circle"]
+59896 -> 59897 [label="%4 = alloca i32, align 4"]
+59897 [label="N59897\n(rp:6, ep:6)", shape="circle"]
+59897 -> 59899 [label="store %struct.stream* %0, %struct.stream** %3, align 8"]
+59899 [label="N59899\n(rp:5, ep:5)", shape="circle"]
+59899 -> 59901 [label="store i32 %1, i32* %4, align 4"]
+59901 [label="N59901\n(rp:4, ep:4)", shape="circle"]
+59901 -> 59902 [label="%5 = load %struct.stream*, %struct.stream** %3, align 8"]
+59902 [label="N59902\n(rp:3, ep:3)", shape="circle"]
+59902 -> 59903 [label="%6 = load i32, i32* %4, align 4"]
+59903 [label="N59903\n(rp:2, ep:2)", shape="circle"]
+59903 -> 59904 [label="sec_send_to_channel --@-- call void @sec_send_to_channel(%struct.stream* %5, i32 %6, i16 1003)", style="dashed", color="blue"]
+59904 [label="N59904\n(rp:1, ep:1)", shape="circle"]
+59904 -> 59893 [label="ret void"]
+}

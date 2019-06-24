@@ -1,0 +1,16 @@
+digraph rdpdr_init {
+label="rdpdr_init"
+49198 [label="N49198\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+49199 [label="N49199\n(rp:6, ep:6)\nentry", shape="doublecircle"]
+49199 -> 49201 [label="channel_register --@-- %1 = call %struct._VCHANNEL* @channel_register(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1.834, i32 0, i32 0), i32 -2139095040, void (%struct.stream*)* @rdpdr_process)", style="dashed", color="blue"]
+49201 [label="N49201\n(rp:5, ep:5)", shape="circle"]
+49201 -> 49202 [label="store %struct._VCHANNEL* %1, %struct._VCHANNEL** @rdpdr_channel, align 8"]
+49202 [label="N49202\n(rp:4, ep:4)", shape="circle"]
+49202 -> 49203 [label="%2 = load %struct._VCHANNEL*, %struct._VCHANNEL** @rdpdr_channel, align 8"]
+49203 [label="N49203\n(rp:3, ep:3)", shape="circle"]
+49203 -> 49204 [label="%3 = icmp ne %struct._VCHANNEL* %2, null"]
+49204 [label="N49204\n(rp:2, ep:2)", shape="circle"]
+49204 -> 49205 [label="%4 = zext i1 %3 to i32"]
+49205 [label="N49205\n(rp:1, ep:1)", shape="circle"]
+49205 -> 49198 [label="ret i32 %4"]
+}

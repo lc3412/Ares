@@ -1,0 +1,12 @@
+digraph rdpsnd_queue_current_packet {
+label="rdpsnd_queue_current_packet"
+54209 [label="N54209\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+54210 [label="N54210\n(rp:4, ep:4)\nentry", shape="doublecircle"]
+54210 -> 54212 [label="%1 = load i32, i32* @queue_lo, align 4"]
+54212 [label="N54212\n(rp:3, ep:3)", shape="circle"]
+54212 -> 54213 [label="%2 = zext i32 %1 to i64"]
+54213 [label="N54213\n(rp:2, ep:2)", shape="circle"]
+54213 -> 54214 [label="%3 = getelementptr inbounds [50 x %struct.audio_packet], [50 x %struct.audio_packet]* @packet_queue, i64 0, i64 %2"]
+54214 [label="N54214\n(rp:1, ep:1)", shape="circle"]
+54214 -> 54209 [label="ret %struct.audio_packet* %3"]
+}

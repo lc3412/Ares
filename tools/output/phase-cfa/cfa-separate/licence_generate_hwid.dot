@@ -1,0 +1,20 @@
+digraph licence_generate_hwid {
+label="licence_generate_hwid"
+27548 [label="N27548\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+27549 [label="N27549\n(rp:8, ep:8)\nentry", shape="doublecircle"]
+27549 -> 27551 [label="%2 = alloca i8*, align 8"]
+27551 [label="N27551\n(rp:7, ep:7)", shape="circle"]
+27551 -> 27553 [label="store i8* %0, i8** %2, align 8"]
+27553 [label="N27553\n(rp:6, ep:6)", shape="circle"]
+27553 -> 27554 [label="%3 = load i8*, i8** %2, align 8"]
+27554 [label="N27554\n(rp:5, ep:5)", shape="circle"]
+27554 -> 27555 [label="buf_out_uint32 --@-- call void @buf_out_uint32(i8* %3, i32 2)", style="dashed", color="blue"]
+27555 [label="N27555\n(rp:4, ep:4)", shape="circle"]
+27555 -> 27556 [label="%4 = load i8*, i8** %2, align 8"]
+27556 [label="N27556\n(rp:3, ep:3)", shape="circle"]
+27556 -> 27557 [label="%5 = getelementptr inbounds i8, i8* %4, i64 4"]
+27557 [label="N27557\n(rp:2, ep:2)", shape="circle"]
+27557 -> 27558 [label="%6 = call i8* @strncpy(i8* %5, i8* getelementptr inbounds ([16 x i8], [16 x i8]* @g_hostname, i32 0, i32 0), i64 16)"]
+27558 [label="N27558\n(rp:1, ep:1)", shape="circle"]
+27558 -> 27548 [label="ret void"]
+}

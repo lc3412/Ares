@@ -1,0 +1,18 @@
+digraph mcs_disconnect {
+label="mcs_disconnect"
+30380 [label="N30380\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+30381 [label="N30381\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+30381 -> 30383 [label="%2 = alloca i32, align 4"]
+30383 [label="N30383\n(rp:6, ep:6)", shape="circle"]
+30383 -> 30385 [label="store i32 %0, i32* %2, align 4"]
+30385 [label="N30385\n(rp:5, ep:5)", shape="circle"]
+30385 -> 30386 [label="%3 = load i32, i32* %2, align 4"]
+30386 [label="N30386\n(rp:4, ep:4)", shape="circle"]
+30386 -> 30387 [label="%4 = trunc i32 %3 to i16"]
+30387 [label="N30387\n(rp:3, ep:3)", shape="circle"]
+30387 -> 30388 [label="mcs_send_dpu --@-- call void @mcs_send_dpu(i16 %4)", style="dashed", color="blue"]
+30388 [label="N30388\n(rp:2, ep:2)", shape="circle"]
+30388 -> 30389 [label="iso_disconnect --@-- call void @iso_disconnect()", style="dashed", color="blue"]
+30389 [label="N30389\n(rp:1, ep:1)", shape="circle"]
+30389 -> 30380 [label="ret void"]
+}

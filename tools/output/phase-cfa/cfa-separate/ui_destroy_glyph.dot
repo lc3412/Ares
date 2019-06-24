@@ -1,0 +1,18 @@
+digraph ui_destroy_glyph {
+label="ui_destroy_glyph"
+73373 [label="N73373\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+73374 [label="N73374\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+73374 -> 73376 [label="%2 = alloca i8*, align 8"]
+73376 [label="N73376\n(rp:6, ep:6)", shape="circle"]
+73376 -> 73378 [label="store i8* %0, i8** %2, align 8"]
+73378 [label="N73378\n(rp:5, ep:5)", shape="circle"]
+73378 -> 73379 [label="%3 = load %struct._XDisplay*, %struct._XDisplay** @g_display, align 8"]
+73379 [label="N73379\n(rp:4, ep:4)", shape="circle"]
+73379 -> 73380 [label="%4 = load i8*, i8** %2, align 8"]
+73380 [label="N73380\n(rp:3, ep:3)", shape="circle"]
+73380 -> 73381 [label="%5 = ptrtoint i8* %4 to i64"]
+73381 [label="N73381\n(rp:2, ep:2)", shape="circle"]
+73381 -> 73382 [label="%6 = call i32 @XFreePixmap(%struct._XDisplay* %3, i64 %5)"]
+73382 [label="N73382\n(rp:1, ep:1)", shape="circle"]
+73382 -> 73373 [label="ret void"]
+}

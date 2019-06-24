@@ -1,0 +1,14 @@
+digraph seamless_send_destroy {
+label="seamless_send_destroy"
+57315 [label="N57315\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+57316 [label="N57316\n(rp:5, ep:5)\nentry", shape="doublecircle"]
+57316 -> 57318 [label="%2 = alloca i64, align 8"]
+57318 [label="N57318\n(rp:4, ep:4)", shape="circle"]
+57318 -> 57320 [label="store i64 %0, i64* %2, align 8"]
+57320 [label="N57320\n(rp:3, ep:3)", shape="circle"]
+57320 -> 57321 [label="%3 = load i64, i64* %2, align 8"]
+57321 [label="N57321\n(rp:2, ep:2)", shape="circle"]
+57321 -> 57322 [label="seamless_send --@-- %4 = call i32 @seamless_send(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.11.972, i32 0, i32 0), i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.12.1016, i32 0, i32 0), i64 %3)", style="dashed", color="blue"]
+57322 [label="N57322\n(rp:1, ep:1)", shape="circle"]
+57322 -> 57315 [label="ret i32 %4"]
+}

@@ -1,0 +1,18 @@
+digraph rdpsnd_record {
+label="rdpsnd_record"
+54417 [label="N54417\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+54418 [label="N54418\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+54418 -> 54420 [label="%3 = alloca i8*, align 8"]
+54420 [label="N54420\n(rp:6, ep:6)", shape="circle"]
+54420 -> 54421 [label="%4 = alloca i32, align 4"]
+54421 [label="N54421\n(rp:5, ep:5)", shape="circle"]
+54421 -> 54423 [label="store i8* %0, i8** %3, align 8"]
+54423 [label="N54423\n(rp:4, ep:4)", shape="circle"]
+54423 -> 54425 [label="store i32 %1, i32* %4, align 4"]
+54425 [label="N54425\n(rp:3, ep:3)", shape="circle"]
+54425 -> 54426 [label="%5 = load i8*, i8** %3, align 8"]
+54426 [label="N54426\n(rp:2, ep:2)", shape="circle"]
+54426 -> 54427 [label="%6 = load i32, i32* %4, align 4"]
+54427 [label="N54427\n(rp:1, ep:1)", shape="circle"]
+54427 -> 54417 [label="ret void"]
+}

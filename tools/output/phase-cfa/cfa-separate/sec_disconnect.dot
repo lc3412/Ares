@@ -1,0 +1,8 @@
+digraph sec_disconnect {
+label="sec_disconnect"
+57585 [label="N57585\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+57586 [label="N57586\n(rp:2, ep:2)\nentry", shape="doublecircle"]
+57586 -> 57588 [label="mcs_disconnect --@-- call void @mcs_disconnect(i32 3)", style="dashed", color="blue"]
+57588 [label="N57588\n(rp:1, ep:1)", shape="circle"]
+57588 -> 57585 [label="ret void"]
+}

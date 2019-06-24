@@ -1,0 +1,16 @@
+digraph rdpsnd_send {
+label="rdpsnd_send"
+54473 [label="N54473\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+54474 [label="N54474\n(rp:6, ep:6)\nentry", shape="doublecircle"]
+54474 -> 54476 [label="%2 = alloca %struct.stream*, align 8"]
+54476 [label="N54476\n(rp:5, ep:5)", shape="circle"]
+54476 -> 54478 [label="store %struct.stream* %0, %struct.stream** %2, align 8"]
+54478 [label="N54478\n(rp:4, ep:4)", shape="circle"]
+54478 -> 54479 [label="%3 = load %struct.stream*, %struct.stream** %2, align 8"]
+54479 [label="N54479\n(rp:3, ep:3)", shape="circle"]
+54479 -> 54480 [label="%4 = load %struct._VCHANNEL*, %struct._VCHANNEL** @rdpsnd_channel, align 8"]
+54480 [label="N54480\n(rp:2, ep:2)", shape="circle"]
+54480 -> 54481 [label="channel_send --@-- call void @channel_send(%struct.stream* %3, %struct._VCHANNEL* %4)", style="dashed", color="blue"]
+54481 [label="N54481\n(rp:1, ep:1)", shape="circle"]
+54481 -> 54473 [label="ret void"]
+}

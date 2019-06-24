@@ -1,0 +1,10 @@
+digraph mcs_reset_state {
+label="mcs_reset_state"
+30881 [label="N30881\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+30882 [label="N30882\n(rp:3, ep:3)\nentry", shape="doublecircle"]
+30882 -> 30884 [label="store i16 0, i16* @g_mcs_userid, align 2"]
+30884 [label="N30884\n(rp:2, ep:2)", shape="circle"]
+30884 -> 30885 [label="iso_reset_state --@-- call void @iso_reset_state()", style="dashed", color="blue"]
+30885 [label="N30885\n(rp:1, ep:1)", shape="circle"]
+30885 -> 30881 [label="ret void"]
+}

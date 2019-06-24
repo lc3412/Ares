@@ -1,0 +1,20 @@
+digraph out_utf16s_no_eos {
+label="out_utf16s_no_eos"
+33421 [label="N33421\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+33422 [label="N33422\n(rp:8, ep:8)\nentry", shape="doublecircle"]
+33422 -> 33424 [label="%3 = alloca %struct.stream*, align 8"]
+33424 [label="N33424\n(rp:7, ep:7)", shape="circle"]
+33424 -> 33425 [label="%4 = alloca i8*, align 8"]
+33425 [label="N33425\n(rp:6, ep:6)", shape="circle"]
+33425 -> 33427 [label="store %struct.stream* %0, %struct.stream** %3, align 8"]
+33427 [label="N33427\n(rp:5, ep:5)", shape="circle"]
+33427 -> 33429 [label="store i8* %1, i8** %4, align 8"]
+33429 [label="N33429\n(rp:4, ep:4)", shape="circle"]
+33429 -> 33430 [label="%5 = load %struct.stream*, %struct.stream** %3, align 8"]
+33430 [label="N33430\n(rp:3, ep:3)", shape="circle"]
+33430 -> 33431 [label="%6 = load i8*, i8** %4, align 8"]
+33431 [label="N33431\n(rp:2, ep:2)", shape="circle"]
+33431 -> 33432 [label="_out_utf16s --@-- %7 = call i64 @_out_utf16s(%struct.stream* %5, i64 0, i8* %6)", style="dashed", color="blue"]
+33432 [label="N33432\n(rp:1, ep:1)", shape="circle"]
+33432 -> 33421 [label="ret void"]
+}

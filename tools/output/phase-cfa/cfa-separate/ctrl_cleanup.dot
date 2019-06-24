@@ -1,0 +1,19 @@
+digraph ctrl_cleanup {
+label="ctrl_cleanup"
+17836 [label="N17836\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+17837 [label="N17837\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+17837 -> 17839 [label="%1 = load i32, i32* @ctrlsock, align 4"]
+17839 [label="N17839\n(rp:6, ep:6)", shape="circle"]
+17839 -> 17840 [label="%2 = icmp ne i32 %1, 0"]
+17840 [label="N17840\n(rp:5, ep:5)", shape="circle"]
+17840 -> 17846 [label="[%2 = icmp ne i32 %1, 0]"]
+17840 -> 17845 [label="[!(%2 = icmp ne i32 %1, 0)]"]
+17842 [label="N17842\n(rp:3, ep:3)", shape="circle"]
+17842 -> 17843 [label="%5 = call i32 @close(i32 %4)"]
+17843 [label="N17843\n(rp:2, ep:2)", shape="circle"]
+17843 -> 17845 [label="%6 = call i32 @unlink(i8* getelementptr inbounds ([4096 x i8], [4096 x i8]* @ctrlsock_name, i32 0, i32 0))"]
+17845 [label="N17845\n(rp:1, ep:1)", shape="circle"]
+17845 -> 17836 [label="ret void"]
+17846 [label="N17846\n(rp:4, ep:4)", shape="circle"]
+17846 -> 17842 [label="%4 = load i32, i32* @ctrlsock, align 4"]
+}

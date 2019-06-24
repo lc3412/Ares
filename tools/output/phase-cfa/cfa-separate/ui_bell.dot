@@ -1,0 +1,10 @@
+digraph ui_bell {
+label="ui_bell"
+71298 [label="N71298\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+71299 [label="N71299\n(rp:3, ep:3)\nentry", shape="doublecircle"]
+71299 -> 71301 [label="%1 = load %struct._XDisplay*, %struct._XDisplay** @g_display, align 8"]
+71301 [label="N71301\n(rp:2, ep:2)", shape="circle"]
+71301 -> 71302 [label="%2 = call i32 @XBell(%struct._XDisplay* %1, i32 0)"]
+71302 [label="N71302\n(rp:1, ep:1)", shape="circle"]
+71302 -> 71298 [label="ret void"]
+}

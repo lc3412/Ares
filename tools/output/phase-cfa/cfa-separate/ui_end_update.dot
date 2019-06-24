@@ -1,0 +1,10 @@
+digraph ui_end_update {
+label="ui_end_update"
+76012 [label="N76012\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+76013 [label="N76013\n(rp:3, ep:3)\nentry", shape="doublecircle"]
+76013 -> 76015 [label="%1 = load %struct._XDisplay*, %struct._XDisplay** @g_display, align 8"]
+76015 [label="N76015\n(rp:2, ep:2)", shape="circle"]
+76015 -> 76016 [label="%2 = call i32 @XFlush(%struct._XDisplay* %1)"]
+76016 [label="N76016\n(rp:1, ep:1)", shape="circle"]
+76016 -> 76012 [label="ret void"]
+}

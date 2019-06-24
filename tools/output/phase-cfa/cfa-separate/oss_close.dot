@@ -1,0 +1,12 @@
+digraph oss_close {
+label="oss_close"
+32580 [label="N32580\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+32581 [label="N32581\n(rp:4, ep:4)\nentry", shape="doublecircle"]
+32581 -> 32583 [label="%1 = load i32, i32* @dsp_fd, align 4"]
+32583 [label="N32583\n(rp:3, ep:3)", shape="circle"]
+32583 -> 32584 [label="%2 = call i32 @close(i32 %1)"]
+32584 [label="N32584\n(rp:2, ep:2)", shape="circle"]
+32584 -> 32585 [label="store i32 -1, i32* @dsp_fd, align 4"]
+32585 [label="N32585\n(rp:1, ep:1)", shape="circle"]
+32585 -> 32580 [label="ret void"]
+}

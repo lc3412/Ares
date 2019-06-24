@@ -1,0 +1,22 @@
+cpa=cpa.arg.ARGCPA
+
+# *.cpa child of *
+ARGCPA.cpa=cpa.composite.CompositeCPA
+
+# *.cpas children of *
+CompositeCPA.cpas=cpa.callstack.CallStackCPA, cpa.bound.BoundCPA, cpa.location.LocationCPA, cpa.checker.CheckerCPA, cpa.value_base.ValueBaseCPA
+cpa.value.plugins=ap
+cpa.checker.plugins=summary,ap
+cpa.bound.maxDepth=1
+cpa.bound.maxIteration=1
+cpa.bound.rules=depth,loopHead,callInAbstract,recursive,concrete
+
+# analysis traversal configuration
+analysis.traversal.order=bfs
+analysis.traversal.controlled.maxWaitingSize=100
+analysis.traversal.usePriority=true
+
+# multi-entry analysis strategy
+phase.mulentryAlgorithm.static.strategy = FUNCTION
+# phase.mulentryAlgorithm.static.strategy = FIXED
+# phase.mulentryAlgorithm.static.entries = ex_cexpr

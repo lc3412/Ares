@@ -1,0 +1,12 @@
+digraph rdesktop_reset_state {
+label="rdesktop_reset_state"
+44200 [label="N44200\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+44201 [label="N44201\n(rp:4, ep:4)\nentry", shape="doublecircle"]
+44201 -> 44203 [label="store i32 1, i32* @g_pending_resize_defer, align 4"]
+44203 [label="N44203\n(rp:3, ep:3)", shape="circle"]
+44203 -> 44204 [label="rdp_reset_state --@-- call void @rdp_reset_state()", style="dashed", color="blue"]
+44204 [label="N44204\n(rp:2, ep:2)", shape="circle"]
+44204 -> 44205 [label="rdpsnd_reset_state --@-- call void @rdpsnd_reset_state()", style="dashed", color="blue"]
+44205 [label="N44205\n(rp:1, ep:1)", shape="circle"]
+44205 -> 44200 [label="ret void"]
+}

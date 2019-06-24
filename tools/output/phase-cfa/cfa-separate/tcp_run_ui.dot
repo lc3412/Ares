@@ -1,0 +1,14 @@
+digraph tcp_run_ui {
+label="tcp_run_ui"
+64911 [label="N64911\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+64912 [label="N64912\n(rp:5, ep:5)\nentry", shape="doublecircle"]
+64912 -> 64914 [label="%2 = alloca i32, align 4"]
+64914 [label="N64914\n(rp:4, ep:4)", shape="circle"]
+64914 -> 64916 [label="store i32 %0, i32* %2, align 4"]
+64916 [label="N64916\n(rp:3, ep:3)", shape="circle"]
+64916 -> 64917 [label="%3 = load i32, i32* %2, align 4"]
+64917 [label="N64917\n(rp:2, ep:2)", shape="circle"]
+64917 -> 64918 [label="store i32 %3, i32* @g_run_ui, align 4"]
+64918 [label="N64918\n(rp:1, ep:1)", shape="circle"]
+64918 -> 64911 [label="ret void"]
+}

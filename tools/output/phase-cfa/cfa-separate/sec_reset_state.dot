@@ -1,0 +1,18 @@
+digraph sec_reset_state {
+label="sec_reset_state"
+59856 [label="N59856\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+59857 [label="N59857\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+59857 -> 59859 [label="store i16 0, i16* @g_server_rdp_version, align 2"]
+59859 [label="N59859\n(rp:6, ep:6)", shape="circle"]
+59859 -> 59860 [label="store i32 0, i32* @g_sec_encrypt_use_count, align 4"]
+59860 [label="N59860\n(rp:5, ep:5)", shape="circle"]
+59860 -> 59861 [label="store i32 0, i32* @g_sec_decrypt_use_count, align 4"]
+59861 [label="N59861\n(rp:4, ep:4)", shape="circle"]
+59861 -> 59862 [label="store i32 0, i32* @g_licence_issued, align 4"]
+59862 [label="N59862\n(rp:3, ep:3)", shape="circle"]
+59862 -> 59863 [label="store i32 0, i32* @g_licence_error_result, align 4"]
+59863 [label="N59863\n(rp:2, ep:2)", shape="circle"]
+59863 -> 59864 [label="mcs_reset_state --@-- call void @mcs_reset_state()", style="dashed", color="blue"]
+59864 [label="N59864\n(rp:1, ep:1)", shape="circle"]
+59864 -> 59856 [label="ret void"]
+}

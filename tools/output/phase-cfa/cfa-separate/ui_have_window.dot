@@ -1,0 +1,12 @@
+digraph ui_have_window {
+label="ui_have_window"
+76121 [label="N76121\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+76122 [label="N76122\n(rp:4, ep:4)\nentry", shape="doublecircle"]
+76122 -> 76124 [label="%1 = load i64, i64* @g_wnd, align 8"]
+76124 [label="N76124\n(rp:3, ep:3)", shape="circle"]
+76124 -> 76125 [label="%2 = icmp ne i64 %1, 0"]
+76125 [label="N76125\n(rp:2, ep:2)", shape="circle"]
+76125 -> 76126 [label="%3 = select i1 %2, i32 1, i32 0"]
+76126 [label="N76126\n(rp:1, ep:1)", shape="circle"]
+76126 -> 76121 [label="ret i32 %3"]
+}

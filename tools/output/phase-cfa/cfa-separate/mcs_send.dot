@@ -1,0 +1,14 @@
+digraph mcs_send {
+label="mcs_send"
+30886 [label="N30886\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+30887 [label="N30887\n(rp:5, ep:5)\nentry", shape="doublecircle"]
+30887 -> 30889 [label="%2 = alloca %struct.stream*, align 8"]
+30889 [label="N30889\n(rp:4, ep:4)", shape="circle"]
+30889 -> 30891 [label="store %struct.stream* %0, %struct.stream** %2, align 8"]
+30891 [label="N30891\n(rp:3, ep:3)", shape="circle"]
+30891 -> 30892 [label="%3 = load %struct.stream*, %struct.stream** %2, align 8"]
+30892 [label="N30892\n(rp:2, ep:2)", shape="circle"]
+30892 -> 30893 [label="mcs_send_to_channel --@-- call void @mcs_send_to_channel(%struct.stream* %3, i16 1003)", style="dashed", color="blue"]
+30893 [label="N30893\n(rp:1, ep:1)", shape="circle"]
+30893 -> 30886 [label="ret void"]
+}

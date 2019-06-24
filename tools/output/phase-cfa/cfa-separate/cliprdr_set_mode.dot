@@ -1,0 +1,14 @@
+digraph cliprdr_set_mode {
+label="cliprdr_set_mode"
+17391 [label="N17391\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+17392 [label="N17392\n(rp:5, ep:5)\nentry", shape="doublecircle"]
+17392 -> 17394 [label="%2 = alloca i8*, align 8"]
+17394 [label="N17394\n(rp:4, ep:4)", shape="circle"]
+17394 -> 17396 [label="store i8* %0, i8** %2, align 8"]
+17396 [label="N17396\n(rp:3, ep:3)", shape="circle"]
+17396 -> 17397 [label="%3 = load i8*, i8** %2, align 8"]
+17397 [label="N17397\n(rp:2, ep:2)", shape="circle"]
+17397 -> 17398 [label="ui_clip_set_mode --@-- call void @ui_clip_set_mode(i8* %3)", style="dashed", color="blue"]
+17398 [label="N17398\n(rp:1, ep:1)", shape="circle"]
+17398 -> 17391 [label="ret void"]
+}

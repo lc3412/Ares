@@ -1,0 +1,16 @@
+digraph get_window_attribs_seamless {
+label="get_window_attribs_seamless"
+25482 [label="N25482\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+25483 [label="N25483\n(rp:6, ep:6)\nentry", shape="doublecircle"]
+25483 -> 25485 [label="%2 = alloca %struct.XSetWindowAttributes*, align 8"]
+25485 [label="N25485\n(rp:5, ep:5)", shape="circle"]
+25485 -> 25487 [label="store %struct.XSetWindowAttributes* %0, %struct.XSetWindowAttributes** %2, align 8"]
+25487 [label="N25487\n(rp:4, ep:4)", shape="circle"]
+25487 -> 25488 [label="%3 = load %struct.XSetWindowAttributes*, %struct.XSetWindowAttributes** %2, align 8"]
+25488 [label="N25488\n(rp:3, ep:3)", shape="circle"]
+25488 -> 25489 [label="get_window_attribs --@-- %4 = call i64 @get_window_attribs(%struct.XSetWindowAttributes* %3)", style="dashed", color="blue"]
+25489 [label="N25489\n(rp:2, ep:2)", shape="circle"]
+25489 -> 25490 [label="%5 = and i64 %4, -513"]
+25490 [label="N25490\n(rp:1, ep:1)", shape="circle"]
+25490 -> 25482 [label="ret i64 %5"]
+}

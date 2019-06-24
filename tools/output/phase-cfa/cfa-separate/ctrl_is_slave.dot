@@ -1,0 +1,8 @@
+digraph ctrl_is_slave {
+label="ctrl_is_slave"
+17982 [label="N17982\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+17983 [label="N17983\n(rp:2, ep:2)\nentry", shape="doublecircle"]
+17983 -> 17985 [label="%1 = load i32, i32* @_ctrl_is_slave, align 4"]
+17985 [label="N17985\n(rp:1, ep:1)", shape="circle"]
+17985 -> 17982 [label="ret i32 %1"]
+}

@@ -1,0 +1,10 @@
+digraph iso_disconnect {
+label="iso_disconnect"
+26837 [label="N26837\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+26838 [label="N26838\n(rp:3, ep:3)\nentry", shape="doublecircle"]
+26838 -> 26840 [label="iso_send_msg --@-- call void @iso_send_msg(i8 -128)", style="dashed", color="blue"]
+26840 [label="N26840\n(rp:2, ep:2)", shape="circle"]
+26840 -> 26841 [label="tcp_disconnect --@-- call void @tcp_disconnect()", style="dashed", color="blue"]
+26841 [label="N26841\n(rp:1, ep:1)", shape="circle"]
+26841 -> 26837 [label="ret void"]
+}

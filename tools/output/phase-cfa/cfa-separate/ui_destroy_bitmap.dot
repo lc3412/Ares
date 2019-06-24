@@ -1,0 +1,18 @@
+digraph ui_destroy_bitmap {
+label="ui_destroy_bitmap"
+73326 [label="N73326\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+73327 [label="N73327\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+73327 -> 73329 [label="%2 = alloca i8*, align 8"]
+73329 [label="N73329\n(rp:6, ep:6)", shape="circle"]
+73329 -> 73331 [label="store i8* %0, i8** %2, align 8"]
+73331 [label="N73331\n(rp:5, ep:5)", shape="circle"]
+73331 -> 73332 [label="%3 = load %struct._XDisplay*, %struct._XDisplay** @g_display, align 8"]
+73332 [label="N73332\n(rp:4, ep:4)", shape="circle"]
+73332 -> 73333 [label="%4 = load i8*, i8** %2, align 8"]
+73333 [label="N73333\n(rp:3, ep:3)", shape="circle"]
+73333 -> 73334 [label="%5 = ptrtoint i8* %4 to i64"]
+73334 [label="N73334\n(rp:2, ep:2)", shape="circle"]
+73334 -> 73335 [label="%6 = call i32 @XFreePixmap(%struct._XDisplay* %3, i64 %5)"]
+73335 [label="N73335\n(rp:1, ep:1)", shape="circle"]
+73335 -> 73326 [label="ret void"]
+}

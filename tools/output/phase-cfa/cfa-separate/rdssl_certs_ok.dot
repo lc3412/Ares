@@ -1,0 +1,18 @@
+digraph rdssl_certs_ok {
+label="rdssl_certs_ok"
+54746 [label="N54746\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+54747 [label="N54747\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+54747 -> 54749 [label="%3 = alloca %struct.x509_st*, align 8"]
+54749 [label="N54749\n(rp:6, ep:6)", shape="circle"]
+54749 -> 54750 [label="%4 = alloca %struct.x509_st*, align 8"]
+54750 [label="N54750\n(rp:5, ep:5)", shape="circle"]
+54750 -> 54752 [label="store %struct.x509_st* %0, %struct.x509_st** %3, align 8"]
+54752 [label="N54752\n(rp:4, ep:4)", shape="circle"]
+54752 -> 54754 [label="store %struct.x509_st* %1, %struct.x509_st** %4, align 8"]
+54754 [label="N54754\n(rp:3, ep:3)", shape="circle"]
+54754 -> 54755 [label="%5 = load %struct.x509_st*, %struct.x509_st** %3, align 8"]
+54755 [label="N54755\n(rp:2, ep:2)", shape="circle"]
+54755 -> 54756 [label="%6 = load %struct.x509_st*, %struct.x509_st** %4, align 8"]
+54756 [label="N54756\n(rp:1, ep:1)", shape="circle"]
+54756 -> 54746 [label="ret i32 1"]
+}

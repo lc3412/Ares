@@ -1,0 +1,12 @@
+digraph rdpsnd_queue_init {
+label="rdpsnd_queue_init"
+54222 [label="N54222\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+54223 [label="N54223\n(rp:4, ep:4)\nentry", shape="doublecircle"]
+54223 -> 54225 [label="store i32 0, i32* @queue_hi, align 4"]
+54225 [label="N54225\n(rp:3, ep:3)", shape="circle"]
+54225 -> 54226 [label="store i32 0, i32* @queue_lo, align 4"]
+54226 [label="N54226\n(rp:2, ep:2)", shape="circle"]
+54226 -> 54227 [label="store i32 0, i32* @queue_pending, align 4"]
+54227 [label="N54227\n(rp:1, ep:1)", shape="circle"]
+54227 -> 54222 [label="ret void"]
+}

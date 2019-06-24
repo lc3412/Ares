@@ -1,0 +1,31 @@
+# This is the initial config file for phase
+.SET
+DIR = cn.edu.thu.tsmart.core.phase
+.TES
+
+.DEF cfa
+.TYPE = $(DIR).CFACreatePhase
+analysis.summaryEdges = true
+.FED
+
+.DEF summary
+.TYPE = $(DIR).SummaryComputationPhase
+summary.base = config/
+summary.summaries = live-value.properties,pointer-ap.properties,gated-action.properties
+summary.usedSummary = POINTER_ACCESS
+.FED
+
+.DEF basic
+.TYPE = $(DIR).MultiEntryAlgorithmRunPhase
+phase.mulentryAlgorithm.analysis = config/multi-entry.analysis
+phase.mulentryAlgorithm.stopAfterError = false
+.FED
+
+.DEF result
+.TYPE = $(DIR).AnalyzingResultPhase
+.FED
+
+.RUN
+summary : cfa;
+basic : summary;
+result : basic;

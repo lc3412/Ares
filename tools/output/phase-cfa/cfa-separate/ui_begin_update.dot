@@ -1,0 +1,6 @@
+digraph ui_begin_update {
+label="ui_begin_update"
+71295 [label="N71295\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+71296 [label="N71296\n(rp:1, ep:1)\nentry", shape="doublecircle"]
+71296 -> 71295 [label="ret void"]
+}

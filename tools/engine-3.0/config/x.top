@@ -1,0 +1,7 @@
+phase.manager.config=config/with-pointer.phase
+phase.manager.executionType=SEQUENTIAL
+phase.result.outputMode=XML
+output.disable=false
+analysis.compiler=clang-3.9
+analysis.disassembler=llvm-dis-3.9
+analysis.linker=llvm-link-3.9

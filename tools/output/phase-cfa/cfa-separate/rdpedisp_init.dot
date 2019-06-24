@@ -1,0 +1,8 @@
+digraph rdpedisp_init {
+label="rdpedisp_init"
+51474 [label="N51474\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+51475 [label="N51475\n(rp:2, ep:2)\nentry", shape="doublecircle"]
+51475 -> 51477 [label="dvc_channels_register --@-- %1 = call i32 @dvc_channels_register(i8* getelementptr inbounds ([40 x i8], [40 x i8]* @.str.957, i32 0, i32 0), void (%struct.stream*)* @rdpedisp_process_pdu)", style="dashed", color="blue"]
+51477 [label="N51477\n(rp:1, ep:1)", shape="circle"]
+51477 -> 51474 [label="ret void"]
+}

@@ -1,0 +1,8 @@
+digraph ui_clip_sync {
+label="ui_clip_sync"
+71661 [label="N71661\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+71662 [label="N71662\n(rp:2, ep:2)\nentry", shape="doublecircle"]
+71662 -> 71664 [label="xclip_probe_selections --@-- call void @xclip_probe_selections()", style="dashed", color="blue"]
+71664 [label="N71664\n(rp:1, ep:1)", shape="circle"]
+71664 -> 71661 [label="ret void"]
+}

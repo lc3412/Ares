@@ -1,0 +1,20 @@
+digraph rdpsnddbg_line_handler {
+label="rdpsnddbg_line_handler"
+54559 [label="N54559\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+54560 [label="N54560\n(rp:8, ep:8)\nentry", shape="doublecircle"]
+54560 -> 54562 [label="%3 = alloca i8*, align 8"]
+54562 [label="N54562\n(rp:7, ep:7)", shape="circle"]
+54562 -> 54563 [label="%4 = alloca i8*, align 8"]
+54563 [label="N54563\n(rp:6, ep:6)", shape="circle"]
+54563 -> 54565 [label="store i8* %0, i8** %3, align 8"]
+54565 [label="N54565\n(rp:5, ep:5)", shape="circle"]
+54565 -> 54567 [label="store i8* %1, i8** %4, align 8"]
+54567 [label="N54567\n(rp:4, ep:4)", shape="circle"]
+54567 -> 54568 [label="%5 = load i8*, i8** %4, align 8"]
+54568 [label="N54568\n(rp:3, ep:3)", shape="circle"]
+54568 -> 54569 [label="%6 = load i8*, i8** %3, align 8"]
+54569 [label="N54569\n(rp:2, ep:2)", shape="circle"]
+54569 -> 54570 [label="logger --@-- call void @logger(i32 3, i32 0, i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.24.85, i32 0, i32 0), i8* %6)", style="dashed", color="blue"]
+54570 [label="N54570\n(rp:1, ep:1)", shape="circle"]
+54570 -> 54559 [label="ret i32 1"]
+}

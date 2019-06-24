@@ -1,0 +1,14 @@
+digraph rdssl_sha1_init {
+label="rdssl_sha1_init"
+55084 [label="N55084\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+55085 [label="N55085\n(rp:5, ep:5)\nentry", shape="doublecircle"]
+55085 -> 55087 [label="%2 = alloca %struct.SHAstate_st*, align 8"]
+55087 [label="N55087\n(rp:4, ep:4)", shape="circle"]
+55087 -> 55089 [label="store %struct.SHAstate_st* %0, %struct.SHAstate_st** %2, align 8"]
+55089 [label="N55089\n(rp:3, ep:3)", shape="circle"]
+55089 -> 55090 [label="%3 = load %struct.SHAstate_st*, %struct.SHAstate_st** %2, align 8"]
+55090 [label="N55090\n(rp:2, ep:2)", shape="circle"]
+55090 -> 55091 [label="%4 = call i32 @SHA1_Init(%struct.SHAstate_st* %3)"]
+55091 [label="N55091\n(rp:1, ep:1)", shape="circle"]
+55091 -> 55084 [label="ret void"]
+}

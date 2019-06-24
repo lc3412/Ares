@@ -1,0 +1,21 @@
+digraph oss_open_in {
+label="oss_open_in"
+32755 [label="N32755\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+32756 [label="N32756\n(rp:8, ep:8)\nentry", shape="doublecircle"]
+32756 -> 32758 [label="%1 = alloca i32, align 4"]
+32758 [label="N32758\n(rp:7, ep:7)", shape="circle"]
+32758 -> 32759 [label="oss_open --@-- %2 = call i32 @oss_open(i32 0)", style="dashed", color="blue"]
+32759 [label="N32759\n(rp:6, ep:6)", shape="circle"]
+32759 -> 32760 [label="%3 = icmp ne i32 %2, 0"]
+32760 [label="N32760\n(rp:5, ep:5)", shape="circle"]
+32760 -> 32767 [label="[%3 = icmp ne i32 %2, 0]"]
+32760 -> 32768 [label="[!(%3 = icmp ne i32 %2, 0)]"]
+32765 [label="N32765\n(rp:2, ep:2)", shape="circle"]
+32765 -> 32766 [label="%7 = load i32, i32* %1, align 4"]
+32766 [label="N32766\n(rp:1, ep:1)", shape="circle"]
+32766 -> 32755 [label="ret i32 %7"]
+32767 [label="N32767\n(rp:3, ep:3)", shape="circle"]
+32767 -> 32765 [label="store i32 1, i32* %1, align 4"]
+32768 [label="N32768\n(rp:4, ep:4)", shape="circle"]
+32768 -> 32765 [label="store i32 0, i32* %1, align 4"]
+}

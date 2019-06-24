@@ -1,0 +1,10 @@
+digraph rdp_disconnect {
+label="rdp_disconnect"
+44288 [label="N44288\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+44289 [label="N44289\n(rp:3, ep:3)\nentry", shape="doublecircle"]
+44289 -> 44291 [label="logger --@-- call void @logger(i32 4, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.4.1054, i32 0, i32 0), i8* getelementptr inbounds ([15 x i8], [15 x i8]* @__func__.rdp_disconnect, i32 0, i32 0))", style="dashed", color="blue"]
+44291 [label="N44291\n(rp:2, ep:2)", shape="circle"]
+44291 -> 44292 [label="sec_disconnect --@-- call void @sec_disconnect()", style="dashed", color="blue"]
+44292 [label="N44292\n(rp:1, ep:1)", shape="circle"]
+44292 -> 44288 [label="ret void"]
+}

@@ -1,0 +1,20 @@
+digraph dvc_channels_register {
+label="dvc_channels_register"
+21777 [label="N21777\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+21778 [label="N21778\n(rp:8, ep:8)\nentry", shape="doublecircle"]
+21778 -> 21780 [label="%3 = alloca i8*, align 8"]
+21780 [label="N21780\n(rp:7, ep:7)", shape="circle"]
+21780 -> 21781 [label="%4 = alloca void (%struct.stream*)*, align 8"]
+21781 [label="N21781\n(rp:6, ep:6)", shape="circle"]
+21781 -> 21783 [label="store i8* %0, i8** %3, align 8"]
+21783 [label="N21783\n(rp:5, ep:5)", shape="circle"]
+21783 -> 21785 [label="store void (%struct.stream*)* %1, void (%struct.stream*)** %4, align 8"]
+21785 [label="N21785\n(rp:4, ep:4)", shape="circle"]
+21785 -> 21786 [label="%5 = load i8*, i8** %3, align 8"]
+21786 [label="N21786\n(rp:3, ep:3)", shape="circle"]
+21786 -> 21787 [label="%6 = load void (%struct.stream*)*, void (%struct.stream*)** %4, align 8"]
+21787 [label="N21787\n(rp:2, ep:2)", shape="circle"]
+21787 -> 21788 [label="dvc_channels_add --@-- %7 = call i32 @dvc_channels_add(i8* %5, void (%struct.stream*)* %6, i32 -1)", style="dashed", color="blue"]
+21788 [label="N21788\n(rp:1, ep:1)", shape="circle"]
+21788 -> 21777 [label="ret i32 %7"]
+}

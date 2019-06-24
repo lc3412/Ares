@@ -1,0 +1,18 @@
+digraph dvc_init {
+label="dvc_init"
+21943 [label="N21943\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+21944 [label="N21944\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+21944 -> 21946 [label="call void @llvm.memset.p0i8.i64(i8* bitcast ([20 x %struct.dvc_channel_t]* @channels to i8*), i8 0, i64 320, i32 16, i1 false)"]
+21946 [label="N21946\n(rp:6, ep:6)", shape="circle"]
+21946 -> 21947 [label="channel_register --@-- %1 = call %struct._VCHANNEL* @channel_register(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.1.584, i32 0, i32 0), i32 -1073741824, void (%struct.stream*)* @dvc_process_pdu)", style="dashed", color="blue"]
+21947 [label="N21947\n(rp:5, ep:5)", shape="circle"]
+21947 -> 21948 [label="store %struct._VCHANNEL* %1, %struct._VCHANNEL** @dvc_channel, align 8"]
+21948 [label="N21948\n(rp:4, ep:4)", shape="circle"]
+21948 -> 21949 [label="%2 = load %struct._VCHANNEL*, %struct._VCHANNEL** @dvc_channel, align 8"]
+21949 [label="N21949\n(rp:3, ep:3)", shape="circle"]
+21949 -> 21950 [label="%3 = icmp ne %struct._VCHANNEL* %2, null"]
+21950 [label="N21950\n(rp:2, ep:2)", shape="circle"]
+21950 -> 21951 [label="%4 = zext i1 %3 to i32"]
+21951 [label="N21951\n(rp:1, ep:1)", shape="circle"]
+21951 -> 21943 [label="ret i32 %4"]
+}

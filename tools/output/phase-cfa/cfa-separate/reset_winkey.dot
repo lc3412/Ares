@@ -1,0 +1,21 @@
+digraph reset_winkey {
+label="reset_winkey"
+55413 [label="N55413\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+55414 [label="N55414\n(rp:8, ep:8)\nentry", shape="doublecircle"]
+55414 -> 55416 [label="%2 = alloca i32, align 4"]
+55416 [label="N55416\n(rp:7, ep:7)", shape="circle"]
+55416 -> 55418 [label="store i32 %0, i32* %2, align 4"]
+55418 [label="N55418\n(rp:6, ep:6)", shape="circle"]
+55418 -> 55419 [label="%3 = load i32, i32* @g_rdp_version, align 4"]
+55419 [label="N55419\n(rp:5, ep:5)", shape="circle"]
+55419 -> 55420 [label="%4 = icmp uge i32 %3, 5"]
+55420 [label="N55420\n(rp:4, ep:4)", shape="circle"]
+55420 -> 55425 [label="[%4 = icmp uge i32 %3, 5]"]
+55420 -> 55424 [label="[!(%4 = icmp uge i32 %3, 5)]"]
+55422 [label="N55422\n(rp:2, ep:2)", shape="circle"]
+55422 -> 55424 [label="rdp_send_scancode --@-- call void @rdp_send_scancode(i32 %6, i16 -16384, i8 -37)", style="dashed", color="blue"]
+55424 [label="N55424\n(rp:1, ep:1)", shape="circle"]
+55424 -> 55413 [label="ret void"]
+55425 [label="N55425\n(rp:3, ep:3)", shape="circle"]
+55425 -> 55422 [label="%6 = load i32, i32* %2, align 4"]
+}

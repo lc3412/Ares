@@ -1,0 +1,14 @@
+digraph rd_close_file {
+label="rd_close_file"
+43979 [label="N43979\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+43980 [label="N43980\n(rp:5, ep:5)\nentry", shape="doublecircle"]
+43980 -> 43982 [label="%2 = alloca i32, align 4"]
+43982 [label="N43982\n(rp:4, ep:4)", shape="circle"]
+43982 -> 43984 [label="store i32 %0, i32* %2, align 4"]
+43984 [label="N43984\n(rp:3, ep:3)", shape="circle"]
+43984 -> 43985 [label="%3 = load i32, i32* %2, align 4"]
+43985 [label="N43985\n(rp:2, ep:2)", shape="circle"]
+43985 -> 43986 [label="%4 = call i32 @close(i32 %3)"]
+43986 [label="N43986\n(rp:1, ep:1)", shape="circle"]
+43986 -> 43979 [label="ret void"]
+}

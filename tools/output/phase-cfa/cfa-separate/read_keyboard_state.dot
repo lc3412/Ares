@@ -1,0 +1,20 @@
+digraph read_keyboard_state {
+label="read_keyboard_state"
+55136 [label="N55136\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+55137 [label="N55137\n(rp:8, ep:8)\nentry", shape="doublecircle"]
+55137 -> 55139 [label="%1 = alloca i32, align 4"]
+55139 [label="N55139\n(rp:7, ep:7)", shape="circle"]
+55139 -> 55140 [label="%2 = alloca i64, align 8"]
+55140 [label="N55140\n(rp:6, ep:6)", shape="circle"]
+55140 -> 55144 [label="%3 = alloca i32, align 4"]
+55144 [label="N55144\n(rp:5, ep:5)", shape="circle"]
+55144 -> 55145 [label="%4 = load %struct._XDisplay*, %struct._XDisplay** @g_display, align 8"]
+55145 [label="N55145\n(rp:4, ep:4)", shape="circle"]
+55145 -> 55146 [label="%5 = load i64, i64* @g_wnd, align 8"]
+55146 [label="N55146\n(rp:3, ep:3)", shape="circle"]
+55146 -> 55147 [label="%6 = call i32 @XQueryPointer(%struct._XDisplay* %4, i64 %5, i64* %2, i64* %2, i32* %3, i32* %3, i32* %3, i32* %3, i32* %1)"]
+55147 [label="N55147\n(rp:2, ep:2)", shape="circle"]
+55147 -> 55148 [label="%7 = load i32, i32* %1, align 4"]
+55148 [label="N55148\n(rp:1, ep:1)", shape="circle"]
+55148 -> 55136 [label="ret i32 %7"]
+}

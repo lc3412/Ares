@@ -1,0 +1,14 @@
+digraph rdssl_rkey_free {
+label="rdssl_rkey_free"
+54884 [label="N54884\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+54885 [label="N54885\n(rp:5, ep:5)\nentry", shape="doublecircle"]
+54885 -> 54887 [label="%2 = alloca %struct.rsa_st*, align 8"]
+54887 [label="N54887\n(rp:4, ep:4)", shape="circle"]
+54887 -> 54889 [label="store %struct.rsa_st* %0, %struct.rsa_st** %2, align 8"]
+54889 [label="N54889\n(rp:3, ep:3)", shape="circle"]
+54889 -> 54890 [label="%3 = load %struct.rsa_st*, %struct.rsa_st** %2, align 8"]
+54890 [label="N54890\n(rp:2, ep:2)", shape="circle"]
+54890 -> 54891 [label="call void @RSA_free(%struct.rsa_st* %3)"]
+54891 [label="N54891\n(rp:1, ep:1)", shape="circle"]
+54891 -> 54884 [label="ret void"]
+}

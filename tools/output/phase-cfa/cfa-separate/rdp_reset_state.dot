@@ -1,0 +1,18 @@
+digraph rdp_reset_state {
+label="rdp_reset_state"
+47258 [label="N47258\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+47259 [label="N47259\n(rp:7, ep:7)\nentry", shape="doublecircle"]
+47259 -> 47261 [label="logger --@-- call void @logger(i32 4, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.4.1054, i32 0, i32 0), i8* getelementptr inbounds ([16 x i8], [16 x i8]* @__func__.rdp_reset_state, i32 0, i32 0))", style="dashed", color="blue"]
+47261 [label="N47261\n(rp:6, ep:6)", shape="circle"]
+47261 -> 47262 [label="store i8* null, i8** @g_next_packet, align 8"]
+47262 [label="N47262\n(rp:5, ep:5)", shape="circle"]
+47262 -> 47263 [label="store i32 0, i32* @g_rdp_shareid, align 4"]
+47263 [label="N47263\n(rp:4, ep:4)", shape="circle"]
+47263 -> 47264 [label="store i32 0, i32* @g_exit_mainloop, align 4"]
+47264 [label="N47264\n(rp:3, ep:3)", shape="circle"]
+47264 -> 47265 [label="store i32 1, i32* @g_first_bitmap_caps, align 4"]
+47265 [label="N47265\n(rp:2, ep:2)", shape="circle"]
+47265 -> 47266 [label="sec_reset_state --@-- call void @sec_reset_state()", style="dashed", color="blue"]
+47266 [label="N47266\n(rp:1, ep:1)", shape="circle"]
+47266 -> 47258 [label="ret void"]
+}

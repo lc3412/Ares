@@ -1,0 +1,16 @@
+digraph process_colour_pointer_pdu {
+label="process_colour_pointer_pdu"
+36899 [label="N36899\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+36900 [label="N36900\n(rp:6, ep:6)\nentry", shape="doublecircle"]
+36900 -> 36902 [label="%2 = alloca %struct.stream*, align 8"]
+36902 [label="N36902\n(rp:5, ep:5)", shape="circle"]
+36902 -> 36904 [label="store %struct.stream* %0, %struct.stream** %2, align 8"]
+36904 [label="N36904\n(rp:4, ep:4)", shape="circle"]
+36904 -> 36905 [label="logger --@-- call void @logger(i32 4, i32 0, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.4.1054, i32 0, i32 0), i8* getelementptr inbounds ([27 x i8], [27 x i8]* @__func__.process_colour_pointer_pdu, i32 0, i32 0))", style="dashed", color="blue"]
+36905 [label="N36905\n(rp:3, ep:3)", shape="circle"]
+36905 -> 36906 [label="%3 = load %struct.stream*, %struct.stream** %2, align 8"]
+36906 [label="N36906\n(rp:2, ep:2)", shape="circle"]
+36906 -> 36907 [label="process_colour_pointer_common --@-- call void @process_colour_pointer_common(%struct.stream* %3, i32 24)", style="dashed", color="blue"]
+36907 [label="N36907\n(rp:1, ep:1)", shape="circle"]
+36907 -> 36899 [label="ret void"]
+}

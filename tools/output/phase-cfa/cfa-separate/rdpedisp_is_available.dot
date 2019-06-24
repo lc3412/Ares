@@ -1,0 +1,8 @@
+digraph rdpedisp_is_available {
+label="rdpedisp_is_available"
+51517 [label="N51517\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+51518 [label="N51518\n(rp:2, ep:2)\nentry", shape="doublecircle"]
+51518 -> 51520 [label="dvc_channels_is_available --@-- %1 = call i32 @dvc_channels_is_available(i8* getelementptr inbounds ([40 x i8], [40 x i8]* @.str.957, i32 0, i32 0))", style="dashed", color="blue"]
+51520 [label="N51520\n(rp:1, ep:1)", shape="circle"]
+51520 -> 51517 [label="ret i32 %1"]
+}

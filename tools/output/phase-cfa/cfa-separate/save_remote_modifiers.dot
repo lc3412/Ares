@@ -1,0 +1,23 @@
+digraph save_remote_modifiers {
+label="save_remote_modifiers"
+55811 [label="N55811\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+55812 [label="N55812\n(rp:9, ep:9)\nentry", shape="doublecircle"]
+55812 -> 55814 [label="%2 = alloca i8, align 1"]
+55814 [label="N55814\n(rp:8, ep:8)", shape="circle"]
+55814 -> 55816 [label="store i8 %0, i8* %2, align 1"]
+55816 [label="N55816\n(rp:7, ep:7)", shape="circle"]
+55816 -> 55817 [label="%3 = load i8, i8* %2, align 1"]
+55817 [label="N55817\n(rp:6, ep:6)", shape="circle"]
+55817 -> 55818 [label="is_modifier --@-- %4 = call i32 @is_modifier(i8 %3)", style="dashed", color="blue"]
+55818 [label="N55818\n(rp:5, ep:5)", shape="circle"]
+55818 -> 55819 [label="%5 = icmp ne i32 %4, 0"]
+55819 [label="N55819\n(rp:4, ep:4)", shape="circle"]
+55819 -> 55826 [label="[!(%5 = icmp ne i32 %4, 0)]"]
+55819 -> 55824 [label="[%5 = icmp ne i32 %4, 0]"]
+55822 [label="N55822\n(rp:2, ep:2)", shape="circle"]
+55822 -> 55824 [label="store i16 %8, i16* @saved_remote_modifier_state, align 2"]
+55824 [label="N55824\n(rp:1, ep:1)", shape="circle"]
+55824 -> 55811 [label="ret void"]
+55826 [label="N55826\n(rp:3, ep:3)", shape="circle"]
+55826 -> 55822 [label="%8 = load i16, i16* @remote_modifier_state, align 2"]
+}

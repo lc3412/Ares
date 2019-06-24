@@ -1,0 +1,16 @@
+digraph cliprdr_init {
+label="cliprdr_init"
+17075 [label="N17075\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+17076 [label="N17076\n(rp:6, ep:6)\nentry", shape="doublecircle"]
+17076 -> 17078 [label="channel_register --@-- %1 = call %struct._VCHANNEL* @channel_register(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.4.250, i32 0, i32 0), i32 -1063256064, void (%struct.stream*)* @cliprdr_process)", style="dashed", color="blue"]
+17078 [label="N17078\n(rp:5, ep:5)", shape="circle"]
+17078 -> 17079 [label="store %struct._VCHANNEL* %1, %struct._VCHANNEL** @cliprdr_channel, align 8"]
+17079 [label="N17079\n(rp:4, ep:4)", shape="circle"]
+17079 -> 17080 [label="%2 = load %struct._VCHANNEL*, %struct._VCHANNEL** @cliprdr_channel, align 8"]
+17080 [label="N17080\n(rp:3, ep:3)", shape="circle"]
+17080 -> 17081 [label="%3 = icmp ne %struct._VCHANNEL* %2, null"]
+17081 [label="N17081\n(rp:2, ep:2)", shape="circle"]
+17081 -> 17082 [label="%4 = zext i1 %3 to i32"]
+17082 [label="N17082\n(rp:1, ep:1)", shape="circle"]
+17082 -> 17075 [label="ret i32 %4"]
+}

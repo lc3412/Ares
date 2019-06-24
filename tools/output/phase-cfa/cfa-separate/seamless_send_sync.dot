@@ -1,0 +1,23 @@
+digraph seamless_send_sync {
+label="seamless_send_sync"
+57451 [label="N57451\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+57452 [label="N57452\n(rp:9, ep:9)\nentry", shape="doublecircle"]
+57452 -> 57454 [label="%1 = alloca i32, align 4"]
+57454 [label="N57454\n(rp:8, ep:8)", shape="circle"]
+57454 -> 57455 [label="%2 = load i32, i32* @g_seamless_rdp, align 4"]
+57455 [label="N57455\n(rp:7, ep:7)", shape="circle"]
+57455 -> 57456 [label="%3 = icmp ne i32 %2, 0"]
+57456 [label="N57456\n(rp:6, ep:6)", shape="circle"]
+57456 -> 57464 [label="[%3 = icmp ne i32 %2, 0]"]
+57456 -> 57465 [label="[!(%3 = icmp ne i32 %2, 0)]"]
+57460 [label="N57460\n(rp:3, ep:3)", shape="circle"]
+57460 -> 57462 [label="store i32 %6, i32* %1, align 4"]
+57462 [label="N57462\n(rp:2, ep:2)", shape="circle"]
+57462 -> 57463 [label="%8 = load i32, i32* %1, align 4"]
+57463 [label="N57463\n(rp:1, ep:1)", shape="circle"]
+57463 -> 57451 [label="ret i32 %8"]
+57464 [label="N57464\n(rp:4, ep:4)", shape="circle"]
+57464 -> 57460 [label="seamless_send --@-- %6 = call i32 @seamless_send(i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1.992, i32 0, i32 0), i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.2.993, i32 0, i32 0))", style="dashed", color="blue"]
+57465 [label="N57465\n(rp:5, ep:5)", shape="circle"]
+57465 -> 57462 [label="store i32 -1, i32* %1, align 4"]
+}

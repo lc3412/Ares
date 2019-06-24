@@ -1,0 +1,20 @@
+digraph rdssl_cert_read {
+label="rdssl_cert_read"
+54636 [label="N54636\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+54637 [label="N54637\n(rp:8, ep:8)\nentry", shape="doublecircle"]
+54637 -> 54639 [label="%3 = alloca i8*, align 8"]
+54639 [label="N54639\n(rp:7, ep:7)", shape="circle"]
+54639 -> 54640 [label="%4 = alloca i32, align 4"]
+54640 [label="N54640\n(rp:6, ep:6)", shape="circle"]
+54640 -> 54642 [label="store i8* %0, i8** %3, align 8"]
+54642 [label="N54642\n(rp:5, ep:5)", shape="circle"]
+54642 -> 54644 [label="store i32 %1, i32* %4, align 4"]
+54644 [label="N54644\n(rp:4, ep:4)", shape="circle"]
+54644 -> 54645 [label="%5 = load i32, i32* %4, align 4"]
+54645 [label="N54645\n(rp:3, ep:3)", shape="circle"]
+54645 -> 54646 [label="%6 = zext i32 %5 to i64"]
+54646 [label="N54646\n(rp:2, ep:2)", shape="circle"]
+54646 -> 54647 [label="%7 = call %struct.x509_st* @d2i_X509(%struct.x509_st** null, i8** %3, i64 %6)"]
+54647 [label="N54647\n(rp:1, ep:1)", shape="circle"]
+54647 -> 54636 [label="ret %struct.x509_st* %7"]
+}

@@ -1,0 +1,14 @@
+digraph rdpedisp_send {
+label="rdpedisp_send"
+51613 [label="N51613\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+51614 [label="N51614\n(rp:5, ep:5)\nentry", shape="doublecircle"]
+51614 -> 51616 [label="%2 = alloca %struct.stream*, align 8"]
+51616 [label="N51616\n(rp:4, ep:4)", shape="circle"]
+51616 -> 51618 [label="store %struct.stream* %0, %struct.stream** %2, align 8"]
+51618 [label="N51618\n(rp:3, ep:3)", shape="circle"]
+51618 -> 51619 [label="%3 = load %struct.stream*, %struct.stream** %2, align 8"]
+51619 [label="N51619\n(rp:2, ep:2)", shape="circle"]
+51619 -> 51620 [label="dvc_send --@-- call void @dvc_send(i8* getelementptr inbounds ([40 x i8], [40 x i8]* @.str.957, i32 0, i32 0), %struct.stream* %3)", style="dashed", color="blue"]
+51620 [label="N51620\n(rp:1, ep:1)", shape="circle"]
+51620 -> 51613 [label="ret void"]
+}

@@ -1,0 +1,14 @@
+digraph rdssl_cert_free {
+label="rdssl_cert_free"
+54616 [label="N54616\n(rp:0, ep:0)\nexit", shape="doublecircle"]
+54617 [label="N54617\n(rp:5, ep:5)\nentry", shape="doublecircle"]
+54617 -> 54619 [label="%2 = alloca %struct.x509_st*, align 8"]
+54619 [label="N54619\n(rp:4, ep:4)", shape="circle"]
+54619 -> 54621 [label="store %struct.x509_st* %0, %struct.x509_st** %2, align 8"]
+54621 [label="N54621\n(rp:3, ep:3)", shape="circle"]
+54621 -> 54622 [label="%3 = load %struct.x509_st*, %struct.x509_st** %2, align 8"]
+54622 [label="N54622\n(rp:2, ep:2)", shape="circle"]
+54622 -> 54623 [label="call void @X509_free(%struct.x509_st* %3)"]
+54623 [label="N54623\n(rp:1, ep:1)", shape="circle"]
+54623 -> 54616 [label="ret void"]
+}
