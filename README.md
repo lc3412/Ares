@@ -93,7 +93,19 @@ Unfortunately, build-capture tool is under the patient application process. Ther
 #### How to use
 
 Ares can be used with the following steps: 
-  - Ares requires the Unix environment with JDK 1.8.
+  - Ares requires the Unix environment with JDK 1.8. All tools run on Ubuntu 16.04.
   - make sure that target project can be compiled by clang-3.9, then using our build-capture tool to capture its build sequence automatically. The captured results are preprocessed by expanding the macros and in-lining header files. Then using the captured results, we can generate the corresponding IR results which are shown in [Real-World-Projects](evaluation_data/Real-World-Projects).
-  - Trigger the major work of error specification mining with using the command [./infer-spec.sh](tool) Source_Dir. Source_Dir is the target project to be analyzed where you can find in the [Real-World-Projects](evaluation_data/Real-World-Projects).  The more detail usage is already available at:  https://youtu.be/nf1QnFAmu8Q. Inferred specifications are written to the errspec.txt file shown in [tool](tool/output/).
+  - Trigger the major work of error specification mining with using the command [./infer-spec.sh](tool) [Source_Dir]. Source_Dir is the target project to be analyzed where you can find in the [Real-World-Projects](evaluation_data/Real-World-Projects).  The more detail usage is already available at:  https://youtu.be/nf1QnFAmu8Q. Inferred specifications are written to the [errspec.txt](tool/output/).
 
+### Empirical Study
+To identify the Error Handling Block related features, we performed an empirical study on error handling commits of a number of open source projects (namely Linux kernel,OpenSSL, FFmpeg, Curl, FreeRDP and Httpd). We extract commits with commit messages and patches within the studied period ranging from 3 months to 4 years related to the *.c files. 
+
+
+|      Project      | Study Period
+| :---------------: | -------------------------------------: 
+|      Linux kernel      | 20170901-20171231
+|      OpenSSL       |     20150701-20171231
+|      FFmpeg      |      20160701-20171231
+|      Curl      |        20130101-20171231
+|      FreeRDP        |   20130701-20171231
+|      Httpd        |      20130701-20171231
