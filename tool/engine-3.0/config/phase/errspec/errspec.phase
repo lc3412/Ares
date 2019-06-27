@@ -16,11 +16,7 @@ analysis.summaryEdges = true
 .TYPE = $(DIR).errSpec.ErrSpecRunPhase
 .FED
 
-.DEF result
-.TYPE = $(DIR).errSpec.ErrSpecAnalysisPhase
-.FED
 
 .RUN
 summary : cfa;
 basic : summary;
-result : basic;

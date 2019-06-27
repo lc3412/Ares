@@ -1,0 +1,13 @@
+# This is the initial config file for phase
+.SET
+DIR = cn.edu.thu.tsmart.core.phase
+.TES
+
+.DEF Main
+.TYPE = $(DIR).errSpec.ErrSpecAnalysisPhase
+.FED
+
+
+.RUN
+Main;
+

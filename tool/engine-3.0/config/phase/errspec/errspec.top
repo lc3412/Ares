@@ -1,4 +1,4 @@
-phase.manager.config=config/phase/errspec/imchecker.phase
+phase.manager.config=config/phase/errspec/errspec.phase
 phase.manager.executionType=SEQUENTIAL
 phase.result.outputMode=XML
 output.disable=false

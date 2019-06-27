@@ -1,0 +1,4 @@
+phase.manager.config=config/phase/errSpecAnalysisPhase/errspec.phase
+phase.manager.executionType=SEQUENTIAL
+phase.result.outputMode=XML
+output.disable=false
