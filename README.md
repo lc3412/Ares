@@ -16,10 +16,8 @@ Ares is still under development, and contains a lot of bugs and TODO lists. Any 
 
 - Evaluation data ([evaluation_data](evaluation_data))
   - 19 real world projects
-  - Ares evaluation result
-  - APEx evaluation result
   - New bugs found by Ares
-- Tools([tools](tools))
+- Tools([tool](tool))
   - build-capture
    - Ares tookit
  - Empirical Study([empirical_study](empirical_study))
@@ -95,7 +93,7 @@ Unfortunately, build-capture tool is under the patient application process. Ther
 #### How to use
 
 Ares can be used with the following steps: 
-
+  - Ares requires the Unix environment with JDK 1.8.
   - make sure that target project can be compiled by clang-3.9, then using our build-capture tool to capture its build sequence automatically. The captured results are preprocessed by expanding the macros and in-lining header files. Then using the captured results, we can generate the corresponding IR results which are shown in [Real-World-Projects](evaluation_data/Real-World-Projects).
-  - Trigger the major work of error specification mining. It first parses IR results into CFA and CG, then performs static analysis. Inferred specifications are written to the errspec.txt file shown in [tools](tools/output/).
+  - Trigger the major work of error specification mining with using the command [./infer-spec.sh](tool) Source_Dir. Source_Dir is the target project to be analyzed where you can find in the [Real-World-Projects](evaluation_data/Real-World-Projects).  The more detail usage is already available at:  https://youtu.be/nf1QnFAmu8Q. Inferred specifications are written to the errspec.txt file shown in [tool](tool/output/).
 
