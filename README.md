@@ -28,7 +28,7 @@ Ares is still under development, and contains a lot of bugs and TODO lists. Any 
 
 We select 19 widely used projects, i.e., [keepalived](https://github.com/acassen/keepalived), [openssl](https://github.com/openssl/openssl) et al.  We evaluate our approach from two perspectives.
 
-- Inferred error specifications. We employ 19 real world projects. For each project, Ares finds error specifications using multiple heuristics and the found error specifications are showed in the errspec.txt. These projects are used for comparison with state-of-the-art methods in terms of precision and recall. 
+- Inferred error specifications. We employ 19 real world projects. For each project, Ares finds error specifications using multiple heuristics and the found error specifications are showed in the errspec.txt. These projects are used for comparison with state-of-the-art methods in terms of precision and ratio. 
 - New bugs in real world projects. We also apply Ares to the latest versions of real-world programs to evaluate whether our approach can find new bugs.
 
 We also test these projects on  [APEx](https://github.com/yujokang/APEx), an automically error specification inference tool.
@@ -93,8 +93,8 @@ Unfortunately, build-capture tool is under the patient application process. Ther
 #### How to use
 
 Ares can be used with the following steps: 
-  - Ares requires the Unix environment with JDK 1.8. All tools run on Ubuntu 16.04.
-  - make sure that target project can be compiled by clang-3.9, then using our build-capture tool to capture its build sequence automatically. The captured results are preprocessed by expanding the macros and in-lining header files. Then using the captured results, we can generate the corresponding IR results which are shown in [Real-World-Projects](evaluation_data/Real-World-Projects).
+  - Ares requires the Unix environment (Our environment is Ubuntu 16.04) with JDK 1.8.
+  - Make sure that target project can be compiled by clang-3.9, then using our build-capture tool to capture its build sequence automatically. The captured results are preprocessed by expanding the macros and in-lining header files. Then using the captured results, we can generate the corresponding IR results which are shown in [Real-World-Projects](evaluation_data/Real-World-Projects).
   - Trigger the major work of error specification mining with using the command [./infer-spec.sh](tool) [Source_Dir]. Source_Dir is the target project to be analyzed where you can find in the [Real-World-Projects](evaluation_data/Real-World-Projects).  The more detail usage is already available at:  https://youtu.be/nf1QnFAmu8Q. Inferred specifications are written to the [errspec.txt](tool/output/).
 
 ### Empirical Study
